@@ -6,6 +6,21 @@
 
 DEVICE_PATH := device/motorola/cybert
 
+# A/B
+AB_OTA_PARTITIONS := \
+    boot \
+    init_boot \
+    product \
+    system \
+    system_dlkm \
+    system_ext \
+    vbmeta \
+    vbmeta_system \
+    vbmeta_vendor \
+    vendor \
+    vendor_boot \
+    vendor_dlkm
+
 # Architecture
 TARGET_ARCH := arm64
 TARGET_ARCH_VARIANT := armv8-2a-dotprod
@@ -72,6 +87,10 @@ BOARD_USES_METADATA_PARTITION := true
 
 # Platform
 TARGET_BOARD_PLATFORM := mt6897
+
+# Recovery
+BOARD_INCLUDE_RECOVERY_RAMDISK_IN_VENDOR_BOOT := true
+BOARD_MOVE_RECOVERY_RESOURCES_TO_VENDOR_BOOT := true
 
 # Inherit the proprietary files
 include vendor/motorola/cybert/BoardConfigVendor.mk
